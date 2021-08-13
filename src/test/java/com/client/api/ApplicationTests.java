@@ -1,4 +1,4 @@
-package com.customer.api;
+package com.client.api;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

@@ -5,11 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ValidatorCustomerException extends RuntimeException {
+public class ValidatorClientException extends RuntimeException {
 
     private String messageCustom;
 
-    public ValidatorCustomerException(String message, String messageCustom) {
+    public ValidatorClientException(String message, String messageCustom) {
         super(message);
         this.messageCustom = messageCustom;
     }

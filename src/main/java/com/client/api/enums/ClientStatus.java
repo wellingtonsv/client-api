@@ -1,5 +1,5 @@
 package com.client.api.enums;
 
-public enum CustomerStatus {
+public enum ClientStatus {
     ACTIVE, INACTIVE
 }

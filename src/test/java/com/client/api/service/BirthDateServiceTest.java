@@ -1,4 +1,4 @@
-package com.customer.api.service;
+package com.client.api.service;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;

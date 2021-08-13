@@ -7,15 +7,15 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-import com.client.api.enums.CustomerStatus;
+import com.client.api.enums.ClientStatus;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomerPartRequest implements Serializable {
+public class ClientPartRequest implements Serializable {
 
     private String name;
     private String email;
-    private CustomerStatus status;
+    private ClientStatus status;
 }

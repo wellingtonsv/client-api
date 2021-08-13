@@ -15,7 +15,7 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CustomerRequest implements Serializable {
+public class ClientRequest implements Serializable {
 
     @NotNull(message = "{name.notnull}")
     @NotEmpty(message = "{name.notempty}")

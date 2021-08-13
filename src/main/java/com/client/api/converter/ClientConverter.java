@@ -4,10 +4,10 @@ import lombok.Generated;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import com.client.api.controller.data.request.CustomerPartRequest;
-import com.client.api.controller.data.request.CustomerRequest;
-import com.client.api.controller.data.response.CustomerResponse;
-import com.client.api.entity.CustomerEntity;
+import com.client.api.controller.data.request.ClientPartRequest;
+import com.client.api.controller.data.request.ClientRequest;
+import com.client.api.controller.data.response.ClientResponse;
+import com.client.api.entity.ClientEntity;
 import com.client.api.service.BirthDateService;
 
 import java.util.List;
@@ -18,12 +18,12 @@ import static java.util.Objects.nonNull;
 @Component
 @Generated
 @RequiredArgsConstructor
-public class CustomerConverter {
+public class ClientConverter {
 
     private final BirthDateService service;
 
-    public CustomerEntity toCustomerEntity(final CustomerRequest request) {
-        return CustomerEntity.builder()
+    public ClientEntity toClientEntity(final ClientRequest request) {
+        return ClientEntity.builder()
                 .name(request.getName())
                 .email(request.getEmail())
                 .cpfCnpj(request.getCpfCnpj())
@@ -31,8 +31,8 @@ public class CustomerConverter {
                 .build();
     }
 
-    public CustomerEntity toCustomerEntityUpdate(final CustomerEntity entity, final CustomerRequest request) {
-        return CustomerEntity.builder()
+    public ClientEntity toClientEntityUpdate(final ClientEntity entity, final ClientRequest request) {
+        return ClientEntity.builder()
                 .id(entity.getId())
                 .name(request.getName())
                 .email(request.getEmail())
@@ -42,7 +42,7 @@ public class CustomerConverter {
                 .build();
     }
 
-    public CustomerEntity toCustomerEntityPartUpdate(final CustomerEntity entity, final CustomerPartRequest request) {
+    public ClientEntity toClientEntityPartUpdate(final ClientEntity entity, final ClientPartRequest request) {
 
         entity.setName(nonNull(request.getName()) ? request.getName() : entity.getName());
         entity.setEmail(nonNull(request.getEmail()) ? request.getEmail() : entity.getEmail());
@@ -51,9 +51,9 @@ public class CustomerConverter {
         return entity;
     }
 
-    public CustomerResponse toCustomerResponse(final CustomerEntity entity) {
-        return CustomerResponse.builder()
-                .customerId(entity.getId())
+    public ClientResponse toClientResponse(final ClientEntity entity) {
+        return ClientResponse.builder()
+                .clientId(entity.getId())
                 .name(entity.getName())
                 .email(entity.getEmail())
                 .cpfCnpj(entity.getCpfCnpj())
@@ -63,7 +63,7 @@ public class CustomerConverter {
                 .build();
     }
 
-    public List<CustomerResponse> toCustomerResponseList(final List<CustomerEntity> entities) {
-        return entities.stream().map(this::toCustomerResponse).collect(Collectors.toList());
+    public List<ClientResponse> toClientResponseList(final List<ClientEntity> entities) {
+        return entities.stream().map(this::toClientResponse).collect(Collectors.toList());
     }
 }

@@ -1,4 +1,4 @@
-# CUSTOMER API
+# CLIENT API
 
     API responsável por manter o cliente, com recursos necessários para cadastrar, alterar o recurso todo 
     ou partes além de listar os recursos por paginação ou um cliente específico.
@@ -7,16 +7,16 @@
 
     - Rodar o projeto com o comando: mvn clean install (para baixar as dependências).
     
-    - O projeto foi utilizado a IDE do Intellij.
+    - O projeto foi utilizado a IDE do Eclipse.
     
     - Para rodar os testes, basta utilizar o comando: mvn clean test
     
-    - Ao subir o projeto automaticamente será inserido 20 registros para testar o endpoint do findAll.
+    - Ao subir o projeto automaticamente será inserido 25 registros para testar o endpoint do findAll.
         Se não quiser utilizá-lo basta comentar no arquivo: application.yml:
         properties:
               hibernate:
                 hbm2ddl:
-                  import_files: data/insert_customer.sql
+                  import_files: data/insert_client.sql
             
 ## Technology and Frameworks
 
@@ -44,7 +44,7 @@
 
     http://localhost:8080/h2-console
 
-    url: jdbc:h2:mem:customer_db
+    url: jdbc:h2:mem:client_db
     username: sa
     password: sa123
     
@@ -55,7 +55,7 @@
   ![Cobertura de Testes](./docs/jacoco/jacoco.PNG)
 
     Caminho do arquivo:
-    /customer-api/target/site/jacoco/index.html    
+    /client-api/target/site/jacoco/index.html    
 
 ## Collection Postman
 
@@ -64,10 +64,7 @@
     - As collections se encontram no seguinte diretório: /docs/collections/
     
     - Variáveis do ambiente: /docs/collections/Localhost.postman_environment.json
-    - Endpoints: /docs/collections/customer-api.postman_collection.json
+    - Endpoints: /docs/collections/client-api.postman_collection.json
     
 
 #client-api
-#client-api
-#client-api
-# client-api

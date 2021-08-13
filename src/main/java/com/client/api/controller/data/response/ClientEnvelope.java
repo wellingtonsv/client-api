@@ -12,8 +12,8 @@ import java.io.Serializable;
 @Builder
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CustomerEnvelope implements Serializable {
+public class ClientEnvelope implements Serializable {
 
     @JsonProperty("data")
-    private CustomerResponse data;
+    private ClientResponse data;
 }

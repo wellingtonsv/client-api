@@ -1,18 +1,18 @@
 {
 	"info": {
 		"_postman_id": "92faf9a6-0c0a-43f9-be26-a33cb8f96835",
-		"name": "customer-api",
+		"name": "client-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Create Customer",
+			"name": "Create Client",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Teste\",\r\n    \"email\": \"wsh.cezar@gmail.com\",\r\n    \"cpf_cnpj\": \"12345678911\",\r\n    \"birth_date\": \"1984-01-22\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Teste\",\r\n    \"email\": \"wellington.vieira@gmail.com\",\r\n    \"cpf_cnpj\": \"12345678911\",\r\n    \"birth_date\": \"1979-02-18\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,49 +20,49 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/customers",
+					"raw": "{{base_url}}/api/clients",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers"
+						"clients"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get Customers - Pagination Default - Size 10",
+			"name": "Get Clients - Pagination Default - Size 10",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/api/customers",
+					"raw": "{{base_url}}/api/clients",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers"
+						"clients"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get Customers - Pagination - Size 5",
+			"name": "Get Clients - Pagination - Size 5",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/api/customers?page=0&size=5",
+					"raw": "{{base_url}}/api/clients?page=0&size=5",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers"
+						"clients"
 					],
 					"query": [
 						{
@@ -79,32 +79,32 @@
 			"response": []
 		},
 		{
-			"name": "Get Customer",
+			"name": "Get Client",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}/api/customers/{{customer_id}}",
+					"raw": "{{base_url}}/api/clients/{{client_id}}",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers",
-						"{{customer_id}}"
+						"clients",
+						"{{client_id}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update Customer",
+			"name": "Update Client",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Teste\",\r\n    \"email\": \"wsh.cezar@gmail.com\",\r\n    \"cpf_cnpj\": \"12345678911\",    \r\n    \"birth_date\": \"1984-10-08\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Teste\",\r\n    \"email\": \"wellintonsv@gmail.com\",\r\n    \"cpf_cnpj\": \"12345678911\",    \r\n    \"birth_date\": \"1979-02-18\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -112,21 +112,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/customers/{{customer_id}}",
+					"raw": "{{base_url}}/api/clients/{{client_id}}",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers",
-						"{{customer_id}}"
+						"clients",
+						"{{client_id}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update Customer",
+			"name": "Update Client",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -140,21 +140,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/customers/{{customer_id}}",
+					"raw": "{{base_url}}/api/clients/{{client_id}}",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers",
-						"{{customer_id}}"
+						"clients",
+						"{{client_id}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update Email Customer",
+			"name": "Update Email Client",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -168,21 +168,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/customers/{{customer_id}}",
+					"raw": "{{base_url}}/api/clients/{{client_id}}",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers",
-						"{{customer_id}}"
+						"clients",
+						"{{client_id}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update Name Customer",
+			"name": "Update Name Client",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -196,21 +196,21 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/customers/{{customer_id}}",
+					"raw": "{{base_url}}/api/clients/{{client_id}}",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers",
-						"{{customer_id}}"
+						"clients",
+						"{{client_id}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Update Status Customer",
+			"name": "Update Status Client",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -224,14 +224,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/customers/{{customer_id}}",
+					"raw": "{{base_url}}/api/clients/{{client_id}}",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
 						"api",
-						"customers",
-						"{{customer_id}}"
+						"clients",
+						"{{client_id}}"
 					]
 				}
 			},

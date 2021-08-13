@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-import com.client.api.enums.CustomerStatus;
+import com.client.api.enums.ClientStatus;
 
 import java.time.LocalDate;
 
@@ -16,32 +16,32 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "tb_customer")
-public class CustomerEntity {
+@Table(name = "tb_client")
+public class ClientEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "id_customer")
+    @Column(name = "id_client")
     private Long id;
 
-    @Column(name = "name_customer", nullable = false)
+    @Column(name = "name_client", nullable = false)
     private String name;
 
-    @Column(name = "email_customer", nullable = false)
+    @Column(name = "email_client", nullable = false)
     private String email;
 
-    @Column(name = "cpf_cnpj_customer", nullable = false)
+    @Column(name = "cpf_cnpj_client", nullable = false)
     private String cpfCnpj;
 
-    @Column(name = "birth_date_customer", nullable = false)
+    @Column(name = "birth_date_client", nullable = false)
     private LocalDate birthDate;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status_customer", nullable = false)
-    private CustomerStatus status;
+    @Column(name = "status_client", nullable = false)
+    private ClientStatus status;
 
     @PrePersist
-    void createCustomer() {
-        status = CustomerStatus.ACTIVE;
+    void createClient() {
+        status = ClientStatus.ACTIVE;
     }
 }

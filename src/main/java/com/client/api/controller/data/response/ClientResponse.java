@@ -1,6 +1,6 @@
 package com.client.api.controller.data.response;
 
-import com.client.api.enums.CustomerStatus;
+import com.client.api.enums.ClientStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -17,11 +17,11 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({"customerId", "name", "email", "cpfCnpj", "birthDate", "age", "status"})
-public class CustomerResponse implements Serializable {
+@JsonPropertyOrder({"clientId", "name", "email", "cpfCnpj", "birthDate", "age", "status"})
+public class ClientResponse implements Serializable {
 
-    @JsonProperty("customer_id")
-    private Long customerId;
+    @JsonProperty("client_id")
+    private Long clientId;
 
     private String name;
 
@@ -35,5 +35,5 @@ public class CustomerResponse implements Serializable {
 
     private int age;
 
-    private CustomerStatus status;
+    private ClientStatus status;
 }

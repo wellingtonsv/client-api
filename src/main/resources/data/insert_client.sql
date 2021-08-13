@@ -18,3 +18,8 @@ INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_cli
 INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 18', 'email18@email.com', '10000000018', '1990-10-18', 'ACTIVE');
 INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 19', 'email19@email.com', '10000000019', '1990-10-19', 'ACTIVE');
 INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 20', 'email20@email.com', '10000000020', '1990-10-20', 'ACTIVE');
+INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 21', 'email21@email.com', '10000000021', '1990-10-21', 'ACTIVE');
+INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 22', 'email22@email.com', '10000000022', '1990-10-22', 'ACTIVE');
+INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 23', 'email23@email.com', '10000000023', '1990-10-23', 'ACTIVE');
+INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 24', 'email24@email.com', '10000000024', '1990-10-24', 'ACTIVE');
+INSERT INTO tb_client(name_client, email_client, cpf_cnpj_client, birth_date_client, status_client) VALUES ('Wellington Vieira 25', 'email25@email.com', '10000000025', '1990-10-25', 'ACTIVE');

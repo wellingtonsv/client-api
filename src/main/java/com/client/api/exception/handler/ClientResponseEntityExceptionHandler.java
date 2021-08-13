@@ -12,7 +12,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.client.api.exception.ResourceNotFoundException;
-import com.client.api.exception.ValidatorCustomerException;
+import com.client.api.exception.ValidatorClientException;
 import com.client.api.exception.bundle.ExceptionMessageResource;
 import com.client.api.exception.model.ExceptionDataResponse;
 import com.client.api.exception.model.ExceptionResponse;
@@ -23,7 +23,7 @@ import java.util.List;
 
 @ControllerAdvice
 @RequiredArgsConstructor
-public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
+public class ClientResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
     private final ExceptionMessageResource exceptionMessage;
 
@@ -55,8 +55,8 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    @ExceptionHandler(ValidatorCustomerException.class)
-    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(ValidatorCustomerException ex, WebRequest request) {
+    @ExceptionHandler(ValidatorClientException.class)
+    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(ValidatorClientException ex, WebRequest request) {
         ExceptionResponse exceptionResponse =
                 new ExceptionResponse(
                         ex.getMessage(),
