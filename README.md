@@ -21,7 +21,7 @@
             
 ## Technology and Frameworks
 
-    - Java11
+    - Java8
     - SpringBoot 2.3.3.RELEASE
     - Swagger 
     - Jacoco
@@ -32,6 +32,7 @@
     - SpringData    
     - HATEOAS
     - TravisCI
+    - Heroku Nuvem
 
 ## Swagger API
 
@@ -70,4 +71,3 @@
     
 
 #client-api
-# client-api
