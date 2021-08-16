@@ -11,7 +11,7 @@ public class BirthDateServiceImpl implements BirthDateService {
 
     public int getAge(final LocalDate birthDate) {
 
-        var date = LocalDate.now();
+    	LocalDate date = LocalDate.now();
         int age = date.getYear() - birthDate.getYear();
 
         return verifyAge(date, birthDate) ? age : age - 1;

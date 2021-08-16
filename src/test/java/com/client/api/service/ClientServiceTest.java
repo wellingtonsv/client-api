@@ -72,7 +72,7 @@ public class ClientServiceTest {
             when(repository.saveAndFlush(any())).thenReturn(entity);
             when(converter.toClientResponse(any())).thenReturn(response);
 
-            var result = service.createClient(request);
+            ClientResponse result = service.createClient(request);
 
             verify(converter).toClientEntity(any());
             verify(repository).saveAndFlush(any());
@@ -133,7 +133,7 @@ public class ClientServiceTest {
             when(repository.saveAndFlush(any())).thenReturn(entity);
             when(converter.toClientResponse(any())).thenReturn(response);
 
-            var result = service.updateClient(CLIENT_ID, request);
+            ClientResponse result = service.updateClient(CLIENT_ID, request);
 
             verify(repository).findById(anyLong());
             verify(converter).toClientEntityUpdate(any(), any());
@@ -174,7 +174,7 @@ public class ClientServiceTest {
             when(repository.findById(anyLong())).thenReturn(Optional.of(entity));
             when(converter.toClientResponse(any())).thenReturn(response);
 
-            var result = service.getByIdClient(CLIENT_ID);
+            ClientResponse result = service.getByIdClient(CLIENT_ID);
 
             verify(repository).findById(anyLong());
             verify(converter).toClientResponse(any());
@@ -196,7 +196,7 @@ public class ClientServiceTest {
             when(repository.saveAndFlush(any())).thenReturn(entity);
             when(converter.toClientResponse(any())).thenReturn(response);
 
-            var result = service.updatePartClient(CLIENT_ID, partRequest);
+            ClientResponse result = service.updatePartClient(CLIENT_ID, partRequest);
 
             verify(repository).findById(anyLong());
             verify(converter).toClientEntityPartUpdate(any(), any());
@@ -243,7 +243,7 @@ public class ClientServiceTest {
             when(repository.findAll(pageable)).thenReturn(page);
             when(converter.toClientResponse(any())).thenReturn(response);
 
-            var result = service.getAllClients(pageable);
+            Page<ClientResponse> result = service.getAllClients(pageable);
 
             verify(repository).findAll(pageable);
 

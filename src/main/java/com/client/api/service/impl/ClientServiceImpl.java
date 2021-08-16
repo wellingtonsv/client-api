@@ -37,7 +37,7 @@ public class ClientServiceImpl implements ClientService {
             throw new ValidatorClientException(VALIDATION_01, request.getCpfCnpj());
         }
 
-        var entity = repository.saveAndFlush(converter.toClientEntity(request));
+        ClientEntity entity = repository.saveAndFlush(converter.toClientEntity(request));
 
         if (isNull(entity))
             throw new ResourceNotFoundException(CLIENT_DATA_01);
@@ -48,7 +48,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Page<ClientResponse> getAllClients(Pageable page) {
 
-        var pages = repository.findAll(page);
+    	 Page<ClientEntity> pages = repository.findAll(page);
 
         if (isNull(pages))
             throw new ResourceNotFoundException(CLIENT_DATA_02);
@@ -59,7 +59,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public ClientResponse getByIdClient(Long clientId) {
 
-        var entity = getById(clientId);
+    	ClientEntity entity = getById(clientId);
 
         return converter.toClientResponse(entity);
     }
@@ -67,7 +67,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public ClientResponse updateClient(Long clientId, ClientRequest request) {
 
-        var clientEntity = converter.toClientEntityUpdate(this.getById(clientId), request);
+    	ClientEntity clientEntity = converter.toClientEntityUpdate(this.getById(clientId), request);
 
         return update(clientEntity, request.getCpfCnpj());
     }
@@ -75,14 +75,14 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public ClientResponse updatePartClient(Long clientId, ClientPartRequest request) {
 
-        var clientEntity = this.getById(clientId);
+    	ClientEntity clientEntity = this.getById(clientId);
 
         return update(converter.toClientEntityPartUpdate(clientEntity, request), request.getName());
     }
 
     private ClientResponse update(ClientEntity clientEntity, String attribute) {
 
-        var entity = repository.saveAndFlush(clientEntity);
+    	ClientEntity entity = repository.saveAndFlush(clientEntity);
 
         if (isNull(entity))
             throw new ResourceNotFoundException(CLIENT_DATA_04, attribute);

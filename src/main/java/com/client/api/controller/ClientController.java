@@ -1,6 +1,8 @@
 package com.client.api.controller;
 
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.http.HttpStatus;
@@ -23,7 +25,7 @@ public class ClientController implements ClientEndpoint {
     @Override
     public ResponseEntity<ClientEnvelope> create(final ClientRequest request) {
 
-        var response = service.createClient(request);
+    	ClientResponse response = service.createClient(request);
 
         return ResponseEntity.ok(ClientEnvelope.builder().data(response).build());
     }
@@ -31,7 +33,7 @@ public class ClientController implements ClientEndpoint {
     @Override
     public ResponseEntity<?> findAll(Pageable page) {
 
-        var response = service.getAllClients(page);
+    	Page<ClientResponse> response = service.getAllClients(page);
 
         return new ResponseEntity<>(assembler.toModel(response), HttpStatus.OK);
     }
@@ -39,7 +41,7 @@ public class ClientController implements ClientEndpoint {
     @Override
     public ClientEnvelope findById(final Long clientId) {
 
-        var response = service.getByIdClient(clientId);
+    	ClientResponse response = service.getByIdClient(clientId);
 
         return ClientEnvelope.builder().data(response).build();
     }
@@ -47,7 +49,7 @@ public class ClientController implements ClientEndpoint {
     @Override
     public ClientEnvelope update(final Long clientId, final ClientRequest request) {
 
-        var response = service.updateClient(clientId, request);
+    	ClientResponse response = service.updateClient(clientId, request);
 
         return ClientEnvelope.builder().data(response).build();
     }
@@ -55,7 +57,7 @@ public class ClientController implements ClientEndpoint {
     @Override
     public ClientEnvelope updatePart(final Long clientId, final ClientPartRequest request) {
 
-        var response = service.updatePartClient(clientId, request);
+    	ClientResponse response = service.updatePartClient(clientId, request);
 
         return ClientEnvelope.builder().data(response).build();
     }
