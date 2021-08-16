@@ -31,6 +31,7 @@
     - Rest
     - SpringData    
     - HATEOAS
+    - TravisCI
 
 ## Swagger API
 
