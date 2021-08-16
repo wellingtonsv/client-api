@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/wellingtonsv/client-api.svg?branch=master)](https://travis-ci.com/wellingtonsv/client-api)
 # CLIENT API
 
     API responsável por manter o cliente, com recursos necessários para cadastrar, alterar o recurso todo 
